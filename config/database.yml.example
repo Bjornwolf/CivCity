@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: civ_city_development
+
+test:
+  adapter: postgresql
+  database: civ-city-test
