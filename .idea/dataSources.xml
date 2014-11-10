@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1975494045">
+    <data-source source="LOCAL" name="Rails CivCity: development" uuid="f4c87a2c-1631-4c74-9160-06f8217eadc9">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:civ_city_development</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails CivCity: test" uuid="ed89ce2a-e5fe-4713-aa0d-0a05cdf11e26">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:civ-city-test</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

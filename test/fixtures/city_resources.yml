@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wood: 1
+  stone: 1
+  food: 1
+
+two:
+  wood: 1
+  stone: 1
+  food: 1
