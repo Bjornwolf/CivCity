@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  citizens: 1
+  food_workers: 
+  wood_workers: 1
+  stone_workes: 1
+
+two:
+  citizens: 1
+  food_workers: 
+  wood_workers: 1
+  stone_workes: 1

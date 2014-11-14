@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114150448) do
+ActiveRecord::Schema.define(version: 20141114154012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20141114150448) do
     t.integer  "wood"
     t.integer  "stone"
     t.integer  "food"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "city_societies", force: true do |t|
+    t.integer  "citizens",      default: 10
+    t.integer  "food_workers",  default: 5
+    t.integer  "wood_workers",  default: 0
+    t.integer  "stone_workers", default: 0
+    t.integer  "city_id",                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
