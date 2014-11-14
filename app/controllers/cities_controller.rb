@@ -24,6 +24,7 @@ class CitiesController < ApplicationController
     params = city_params
     params[:owner_id] = current_user.id
     @city = City.new(params)
+    @city.turn = Turn.create
     @city.save
     respond_with(@city)
   end

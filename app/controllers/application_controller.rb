@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def current_user
+    puts current_credential.inspect
      current_credential.user
   end
 end

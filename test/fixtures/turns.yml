@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  turn_number: 1
+
+two:
+  turn_number: 1
