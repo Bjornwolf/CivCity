@@ -4,4 +4,6 @@
     <p>You should
       <%= link_to "create your first city", controller: 'cities', action: 'new' %>
     </p>
+<% else %>
+    <%= render 'city', city: city %>
 <% end %>

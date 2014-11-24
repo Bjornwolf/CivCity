@@ -1,0 +1,19 @@
+<h2>Your City: <%= city.name %></h2>
+
+<h3>Resources:</h3>
+<ul>
+  <li>Food: <%= city.city_resource.food %></li>
+  <li>Wood: <%= city.city_resource.wood %></li>
+  <li>Stone: <%= city.city_resource.stone %></li>
+</ul>
+
+<h3>City society:</h3>
+<ul>
+  <li>Idle Citizens: <%= city.city_society.idle_workers %></li>
+  <li>Food Workers: <%= city.city_society.food_workers %></li>
+  <li>Wood Workers: <%= city.city_society.wood_workers %></li>
+  <li>Stone Workers: <%= city.city_society.stone_workers %></li>
+  <li>All: <%= city.city_society.citizens %></li>
+</ul>
+
+<h1><a href="/turn/next">Next Turn</a></h1>
