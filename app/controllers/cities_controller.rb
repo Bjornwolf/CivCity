@@ -25,12 +25,12 @@ class CitiesController < ApplicationController
     params[:owner_id] = current_user.id
     @city = City.new(params)
 
-    @city.city_resources = CityResources.new
+    @city.city_resource = CityResource.new
     @city.city_society   = CitySociety.new
     @city.turn = Turn.create
 
-    @city.save
-    respond_with(@city)
+    @city.save!
+    redirect_to '/'
   end
 
   def update
