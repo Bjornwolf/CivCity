@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'turn/next'
 
-  resources :cities
+  resources :cities do
+    collection do
+      get :current
+    end
+  end
 
   root 'dashboard#index'
 

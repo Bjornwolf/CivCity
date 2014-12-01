@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @cities = City.all
@@ -45,7 +45,15 @@ class CitiesController < ApplicationController
     respond_with(@city)
   end
 
+  def current
+    respond_with current_city_query.()
+  end
+
   private
+    def current_city_query
+      Cities::CurrentUserCityQuery.new(current_user)
+    end
+
     def set_city
       @city = City.find(params[:id])
     end
