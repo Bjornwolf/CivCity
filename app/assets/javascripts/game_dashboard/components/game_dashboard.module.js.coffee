@@ -5,7 +5,7 @@ GameDashboard = React.createClass
   displayName: 'GameDashboard'
 
   getInitialState: ->
-    city: null
+    city: undefined
 
   setData: (city) ->
     @setState city: city
@@ -19,6 +19,10 @@ GameDashboard = React.createClass
           a
             href: '/turn/next'
             "Next Turn"
+      else if @state.city is null
+        a
+          href: '/cities/new'
+          "Create your city"
       else
         span null, 'Loading'
 
