@@ -18,6 +18,7 @@ gem 'react-rails'
 
 gem 'spring',        group: :development
 gem 'unicorn'
+gem 'virtus'
 
 group :development, :test do
   gem "jasmine-rails"
