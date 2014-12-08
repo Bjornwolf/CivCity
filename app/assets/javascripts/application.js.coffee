@@ -6,4 +6,5 @@
 #= require uuid
 
 #= require_tree ./modules
+#= require_tree ./city_workers
 #= require_tree ./game_dashboard

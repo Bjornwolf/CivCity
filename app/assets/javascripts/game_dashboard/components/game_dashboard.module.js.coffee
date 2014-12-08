@@ -16,6 +16,7 @@ GameDashboard = React.createClass
         div null,
           City
             city: @state.city
+            eventBus: @props.eventBus
           a
             href: '/turn/next'
             "Next Turn"

@@ -1,4 +1,5 @@
-{h2, h4, div, ul, li} = React.DOM
+{h2, h4, div, ul, li, span} = React.DOM
+CityWorkers = require('city_workers/components/city_workers')
 
 City = React.createClass
   displayName: 'City'
@@ -30,12 +31,8 @@ City = React.createClass
   society: ->
     div null,
       h4 null, "Society:"
-      ul null,
-        li null, "Citizens: " + @citySociety().citizens
-        li null, "Citizens working on Food: " + @citySociety().food_workers
-        li null, "Citizens working on Wood: " + @citySociety().wood_workers
-        li null, "Citizens working on Stone: " + @citySociety().stone_workers
-
+      CityWorkers
+        citySociety: @citySociety()
+        eventBus: @props.eventBus
 
 module.exports = React.createFactory(City)
-
