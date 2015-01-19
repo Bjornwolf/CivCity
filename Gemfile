@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.9'
 
 gem 'pg'
 gem "active_model_serializers"
@@ -18,18 +18,14 @@ gem 'react-rails'
 
 gem 'spring',        group: :development
 gem 'unicorn'
-gem 'virtus'
 
 group :development, :test do
   gem "jasmine-rails"
   gem "sinon-rails"
-  gem "rspec-its"
-  gem "rspec-rails", "~> 2.0"
-  gem "rspec-activemodel-mocks"
-  gem "rspec-collection_matchers"
 end
 
 group :test do
   gem "byebug"
   gem "database_cleaner"
+  gem "mocha"
 end
