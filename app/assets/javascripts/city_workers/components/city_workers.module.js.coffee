@@ -1,5 +1,5 @@
 {div, ul, li, a} = React.DOM
-EditCityWorkers = require('./edit_city_workers')
+EditCityWorkers = React.createFactory require('./edit_city_workers')
 
 CityWorkers = React.createClass
   displayName: 'CityWorkers'

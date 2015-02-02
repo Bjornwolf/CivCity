@@ -1,5 +1,5 @@
 {h2, h4, div, ul, li, span} = React.DOM
-CityWorkers = require('city_workers/components/city_workers')
+CityWorkers = React.createFactory require('city_workers/components/city_workers')
 
 City = React.createClass
   displayName: 'City'
@@ -35,4 +35,4 @@ City = React.createClass
         citySociety: @citySociety()
         eventBus: @props.eventBus
 
-module.exports = React.createFactory(City)
+module.exports = City

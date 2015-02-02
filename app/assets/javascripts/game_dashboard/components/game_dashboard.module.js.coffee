@@ -1,5 +1,5 @@
 {div, span, a} = React.DOM
-City = require('./city')
+City = React.createFactory require('./city')
 
 GameDashboard = React.createClass
   displayName: 'GameDashboard'
@@ -27,4 +27,4 @@ GameDashboard = React.createClass
       else
         span null, 'Loading'
 
-module.exports = React.createFactory(GameDashboard)
+module.exports = GameDashboard
