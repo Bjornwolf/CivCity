@@ -9,26 +9,11 @@ class App
     @backend = new Backend()
     @eventBus = EventBus
     @gui = Gui(eventBus: @eventBus)
-    @useCase = new UseCase(@eventBus)
-
-    @cityWorkers = new CityWorkers()
 
   start: (node) ->
     @gui = React.render(@gui, node)
     @dispatcher = new Dispatcher(@backend, @gui, @useCase, @eventBus)
-    @dispatcher.start()
-
-class UseCase
-  constructor: (@eventBus) ->
-
-  setCity: (@city) ->
-    @update()
-
-  setCitySociety: (citySociety)  ->
-    @city.city_society = citySociety
-    @update()
-
-  update: ->
-    @eventBus.publish 'cityUpdated', @city
+    @backend.getGameData().then (city) =>
+      @gui.setCity(city)
 
 module.exports = App

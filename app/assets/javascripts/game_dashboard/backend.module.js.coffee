@@ -4,5 +4,7 @@ class Backend
       url: '/cities/current'
       type: 'GET'
       dataType: 'JSON'
+    .then (response) =>
+      response.city
 
 module.exports = Backend

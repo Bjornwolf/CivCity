@@ -1,30 +1,70 @@
-{div, span, a} = React.DOM
-City = React.createFactory require('./city')
+{div, span, a, h1} = React.DOM
 
 GameDashboard = React.createClass
   displayName: 'GameDashboard'
 
+  componentDidMount: ->
+    @props.eventBus.publish 'cityResourcesDivRendered'
+    @props.eventBus.publish 'citySocietyDivRendered'
+    @props.eventBus.publish 'cityInfrastructureDivRendered'
+
   getInitialState: ->
     city: undefined
 
-  setData: (city) ->
+  setCity: (city) ->
     @setState city: city
 
   render: ->
+    if !@state.city
+      @loading()
+    else
+      @dashboardSkeleton()
+
+  loading: ->
+    h1
+      style:
+        textAlign: 'center'
+        marginTop: '2em'
+      "Loading..."
+
+  dashboardSkeleton: ->
     div null,
-      if @state.city
-        div null,
-          City
-            city: @state.city
-            eventBus: @props.eventBus
-          a
-            href: '/turn/next'
-            "Next Turn"
-      else if @state.city is null
+      @dashboardHeader()
+      @gameInfrastructure()
+
+  dashboardHeader: ->
+    div
+      className: 'row'
+      div
+        className: 'pull-right'
+        style:
+          marginTop: '2.4em'
         a
-          href: '/cities/new'
-          "Create your city"
-      else
-        span null, 'Loading'
+          href: '/credentials/sign_out'
+          "Sign Out"
+      h1
+        style:
+          display: 'inline-block'
+        "Welcome to your city #{@state.city.name}, our king!"
+
+  gameInfrastructure: ->
+    div
+      className: 'row'
+      @leftColumn()
+      @rightColumn()
+
+  leftColumn: ->
+    div
+      className: 'col-md-6'
+      div
+        className: 'cityResources'
+      div
+        className: 'citySociety'
+
+  rightColumn: ->
+    div
+      className: 'col-md-6'
+      div
+        className: 'cityInfrastructure'
 
 module.exports = GameDashboard
