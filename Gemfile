@@ -16,6 +16,8 @@ gem "sprockets-commonjs"
 gem 'jquery-rails'
 gem 'react-rails'
 
+gem 'virtus'
+
 gem 'spring',        group: :development
 gem 'unicorn'
 
