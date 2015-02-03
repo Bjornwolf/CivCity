@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   namespace :cities do
     resources :city_resources, only: [:index]
-    resources :city_society, only: [:index]
+    resources :city_society, only: [:index] do
+      collection do
+        post :create_citizen
+      end
+    end
   end
 
   resources :cities do

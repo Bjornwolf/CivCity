@@ -4,7 +4,9 @@ Resources = React.createClass
   displayName: 'Resources'
 
   render: ->
-    div null,
+    div
+      style:
+        height: 50
       @foodCounter()
       @woodCounter()
       @stoneCounter()

@@ -3,6 +3,8 @@ class Dispatcher
     @setupEvents()
 
   setupEvents: ->
+    @eventBus.on 'resourcesUpdated', (resources) =>
+      @gui.setResources(resources)
     @eventBus.on 'nextTurn', (resources) =>
       @loadResources()
 

@@ -1,5 +1,6 @@
 {div, h2, h3} = React.DOM
 Resources = React.createFactory require('./components/resources')
+CreateCitizen = React.createFactory require('city_society/create_citizen/create_citizen')
 
 CityResources = React.createClass
   displayName: 'CityResources'
@@ -19,8 +20,12 @@ CityResources = React.createClass
         @loading()
 
   resources: ->
-    Resources
-      resources: @state.resources
+    div null,
+      Resources
+        resources: @state.resources
+      CreateCitizen
+        eventBus: @props.eventBus
+        food: @state.resources.food
 
   loading: ->
     h3 null, "Loading..."
