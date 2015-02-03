@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :cities do
     resources :city_resources, only: [:index]
+    resources :city_society, only: [:index]
   end
 
   resources :cities do
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   namespace :city_workers do
     resources :workers, only: [] do
       collection do
-        post :update
+        put :update
       end
     end
   end

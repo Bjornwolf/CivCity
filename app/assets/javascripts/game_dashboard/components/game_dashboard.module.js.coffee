@@ -57,9 +57,10 @@ GameDashboard = React.createClass
     div
       className: 'col-md-6'
       div
-        className: 'cityResources'
+        className: 'cityResources clearfix'
+        style: marginBottom: 20
       div
-        className: 'citySociety'
+        className: 'citySociety clearfix'
 
   rightColumn: ->
     div

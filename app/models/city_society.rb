@@ -1,7 +1,7 @@
 class CitySociety < ActiveRecord::Base
-  WORKER_GATHER_RATE_FOOD = 2.0
-  WORKER_GATHER_RATE_WOOD = 0.4
-  WORKER_GATHER_RATE_STONE = 0.1
+  WORKER_GATHER_RATE_FOOD = 5.0
+  WORKER_GATHER_RATE_WOOD = 2.0
+  WORKER_GATHER_RATE_STONE = 1.0
 
   validate :worker_count_bigger_than_citizen_count
 

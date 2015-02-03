@@ -3,15 +3,17 @@ class Dispatcher
     @setupEvents()
 
   setupEvents: ->
-    @eventBus.on 'nextTurn', (resources) =>
+    @eventBus.on 'societyUpdated', (society) =>
+      @gui.setSociety(society)
+    @eventBus.on 'nextTurn', (society) =>
       @loadResources()
 
   start: ->
     @loadResources()
 
   loadResources: ->
-    @backend.fetchResources().then (resources) =>
-      @gui.setResources(resources)
+    @backend.fetchSociety().then (society) =>
+      @gui.setSociety(society)
 
 
 module.exports = Dispatcher

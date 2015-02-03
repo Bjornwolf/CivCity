@@ -1,10 +1,10 @@
 class Backend
-  fetchResources: ->
+  fetchSociety: ->
     $.ajax
-      url: '/cities/city_resources'
+      url: '/cities/city_society'
       type: 'GET'
       dataType: 'JSON'
     .then (response) =>
-      response.city_resources
+      response.city_society
 
 module.exports = Backend
