@@ -3,7 +3,7 @@
 GameDashboard = React.createClass
   displayName: 'GameDashboard'
 
-  componentDidMount: ->
+  componentDidUpdate: ->
     @props.eventBus.publish 'cityResourcesDivRendered'
     @props.eventBus.publish 'citySocietyDivRendered'
     @props.eventBus.publish 'cityInfrastructureDivRendered'

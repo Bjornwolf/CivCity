@@ -46,14 +46,11 @@ class CitiesController < ApplicationController
   end
 
   def current
-    respond_with current_city_query.()
+    respond_with current_city,
+                 serializer: Cities::CitySerializer
   end
 
   private
-    def current_city_query
-      Cities::CurrentUserCityQuery.new(current_user)
-    end
-
     def set_city
       @city = City.find(params[:id])
     end

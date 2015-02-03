@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
   def current_user
     current_credential.user
   end
+
+  def current_city
+    current_city_query.()
+  end
+
+  def current_city_query
+    Cities::CurrentUserCityQuery.new(current_user)
+  end
 end

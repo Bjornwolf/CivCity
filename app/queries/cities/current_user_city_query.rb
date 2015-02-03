@@ -5,18 +5,10 @@ module Cities
     end
 
     def call
-      build_city(city)
+      City.where(owner_id: actor.id).first
     end
 
     private
     attr_reader :actor
-
-    def city
-      City.where(owner_id: actor.id).first
-    end
-
-    def build_city(city)
-      CitySerializer.new(city, root: :city).to_json
-    end
   end
 end

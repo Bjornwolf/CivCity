@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   get 'turn/next'
 
+  namespace :cities do
+    resources :city_resources, only: [:index]
+  end
+
   resources :cities do
     collection do
       get :current
