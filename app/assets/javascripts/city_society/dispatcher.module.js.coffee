@@ -5,7 +5,7 @@ class Dispatcher
   setupEvents: ->
     @eventBus.on 'societyUpdated', (society) =>
       @gui.setSociety(society)
-    @eventBus.on 'nextTurn', (society) =>
+    @eventBus.on 'nextTurn', =>
       @loadResources()
 
   start: ->

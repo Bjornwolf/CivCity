@@ -2,7 +2,7 @@ class TurnController < ApplicationController
   def next
     workers_gather_resources
     change_turn
-    redirect_to "/"
+    render json: {done: true}
   end
 
   private

@@ -27,6 +27,9 @@ GameDashboard = React.createClass
         marginTop: '2em'
       "Loading..."
 
+  nextTurn: ->
+    @props.eventBus.publish 'nextTurnRequested'
+
   dashboardSkeleton: ->
     div null,
       @dashboardHeader()
@@ -39,6 +42,11 @@ GameDashboard = React.createClass
         className: 'pull-right'
         style:
           marginTop: '2.4em'
+        a
+          style:
+            marginRight: 8
+          onClick: @nextTurn
+          "Next Turn"
         a
           href: '/credentials/sign_out'
           "Sign Out"
